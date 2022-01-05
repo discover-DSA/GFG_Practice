@@ -5,23 +5,43 @@ public class LeadersInArray {
 	
 	static void leaders(int[] arr, int n)
 	{
-		ArrayList<Integer> al = new ArrayList<Integer>();
+	//	ArrayList<Integer> al = new ArrayList<Integer>();
+		///////naive start
+//		for(int i=0; i<n; i++)
+//		{
+//			boolean flag=false;
+//			//int temp=arr[i];
+//			for(int j=i+1; j<n; j++)
+//			{
+//				if(arr[i]<=arr[j])
+//					{
+//					flag=true;
+//					break;
+//					}
+//				
+//			}
+//			if(flag==false)
+//			{
+//				System.out.print(arr[i]+" ");
+//			}
+//		
+//		}
+		////naive ends
 		
-		for(int i=0; i<n; i++)
+		////pro starts
+		int curr_ldr=arr[n-1];
+		System.out.print(curr_ldr+" ");
+		for(int i=n-2; i>=0; i--)
 		{
-			for(int j=i+1; j<n; j++)
+			if(curr_ldr>arr[i])
 			{
-				if(arr[i]>arr[j] && !al.contains(arr[i]))
-				{
-					al.add(arr[i]);
-				}
+				curr_ldr=arr[i];
+				System.out.print(curr_ldr+" ");
 			}
 		}
 		
-		for(int i:al)
-		{
-			System.out.print(i);
-		}
+		
+
 	}
 	
 	public static void main(String[] args) {
